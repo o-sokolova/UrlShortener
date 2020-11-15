@@ -19,5 +19,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Run test') {
+            steps {
+                script {
+                    sh('docker exec url-shortener ./gradlew test')
+                }
+            }
+        }
     }
 }
