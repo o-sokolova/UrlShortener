@@ -4,7 +4,7 @@ pipeline {
     stage('Checkout') {
       steps {
         script {
-            git url: 'https://github.com/o-sokolova/UrlShortener'
+            git credentialsId: 'UrlShortener', url: 'https://github.com/o-sokolova/UrlShortener'
          }
        }
     }
