@@ -1,5 +1,3 @@
-FROM java:8
-WORKDIR /
-ADD build/lib/*.jar UrlShortener.jar
-EXPOSE 8888
-CMD nohup java -jar UrlShortener.jar > app.log &
+FROM openjdk:8-jdk-alpine
+COPY build/libs/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
