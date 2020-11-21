@@ -15,7 +15,7 @@ pipeline {
                 script {
                     sh('docker ps')
                     sh('docker build -t url-shortener .')
-                    sh('docker run --name url-shortener -p 8888:8888 --detach url-shortener --network="host"')
+                    sh('docker run --name url-shortener --network="host" -p 8888:8888 --detach url-shortener')
                 }
             }
         }
