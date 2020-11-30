@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        stage('Report results') {
+        stage('Report result') {
             steps {
                 script {
                     sh('docker exec url-shortener curl -v -T build/test-results/test/TEST-com.example.UrlShortener.UrlShortenerApplicationTests.xml "http://localhost:18080/seam/resource/rest/importer?config=P00003&env=ENV00001&sut=SUT00001&type=junit&createTestSuiteResults=true&username=admin&password=admin"')
