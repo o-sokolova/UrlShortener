@@ -37,7 +37,7 @@ pipeline {
             }
         }
 
-        stage('Clean up') {
+        stage('Clean up.') {
             steps {
                 script {
                     sh('docker stop url-shortener')
