@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Run tes') {
+        stage('Run test') {
             steps {
                 script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
