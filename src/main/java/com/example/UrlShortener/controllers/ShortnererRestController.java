@@ -17,7 +17,7 @@ public class ShortnererRestController {
 
     @RequestMapping("/hellourl")
     public String hello(String name){
-        return "Hello, " + name;
+        return "Hell, " + name;
     }
 
     @RequestMapping(value = "/shorturl", method = RequestMethod.POST)
