@@ -14,12 +14,12 @@ pipeline {
             steps {
                 script {
                     sh('docker build -t url-shortener .')
-                    sh('docker run --name url-shortener --network="host" -p 8888:8888 --detach url-shortener')
+                    sh('docker run --name url-shortener --network="host" --detach url-shortener')
                 }
             }
         }
 
-        stage('Run testt') {
+        stage('Run test') {
             steps {
                 script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
