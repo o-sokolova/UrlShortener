@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Run testt') {
+        stage('Run test') {
             steps {
                 script {
                     sh('docker exec url-shortener ./gradlew test')
