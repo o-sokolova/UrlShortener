@@ -30,7 +30,7 @@ class UrlShortenerApplicationTests {
         this.mockMvc.perform(get("/hellourl?name=world"))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello, worl"));
+                .andExpect(content().string("Hello, world"));
     }
 
     @Test
