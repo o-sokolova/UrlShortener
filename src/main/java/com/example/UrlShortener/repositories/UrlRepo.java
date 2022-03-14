@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 @Repository
 public class UrlRepo {
-
     private Map<String, String> repoMap = new ConcurrentHashMap<>();
 
     public void save(String key, String value) {
