@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh('docker exec url-shortener ./gradlew test')
+                    sh('./gradlew test')
                     }
                 }
             }
