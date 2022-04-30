@@ -29,7 +29,8 @@ pipeline {
         stage('Form coverage report') {
             steps {
                 script {
-                sh('java -jar jacoco-0.8.7/lib/jacococli.jar report build/jacoco/jacocoTest.exec --classfiles build/classes --csv t2.report')
+                sh('docker cp url-shortener:build/jacoco/jacocoTest.exec ./')
+                sh('java -jar jacoco-0.8.7/lib/jacococli.jar report jacocoTest.exec --classfiles build/classes --csv t2.report')
                 }
             }
         }
