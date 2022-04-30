@@ -9,19 +9,19 @@ pipeline {
                 }
             }
         }
-//        stage('Run app into docker container') {
-//            steps {
-//                script {
-//                    sh('docker build -t url-shortener .')
-//                    sh('docker run --name url-shortener --network="host" --detach url-shortener')
-//                }
-//            }
-//        }
+        stage('Run app into docker container') {
+            steps {
+                script {
+                    sh('docker build -t url-shortener .')
+                    sh('docker run --name url-shortener --network="host" --detach url-shortener')
+                }
+            }
+        }
         stage('Run test') {
             steps {
                 script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh('./gradlew test')
+                    sh('docker exec url-shortener ./gradlew test')
                     }
                 }
             }
