@@ -9,14 +9,14 @@ pipeline {
                 }
             }
         }
-        stage('Run app into docker container') {
-            steps {
-                script {
+//        stage('Run app into docker container') {
+//            steps {
+//                script {
 //                    sh('docker build -t url-shortener .')
 //                    sh('docker run --name url-shortener --network="host" --detach url-shortener')
-                }
-            }
-        }
+//                }
+//            }
+//        }
         stage('Run test') {
             steps {
                 script {
