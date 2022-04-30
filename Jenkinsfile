@@ -29,7 +29,7 @@ pipeline {
         stage('Form coverage report') {
             steps {
                 script {
-                sh('java -jar jacoco-0.8.7/lib/jacococli.jar report build/jacoco/jacocoTest.exec --classfiles build/classes --csv ${env.JOB_NAME}.report')
+                sh('java -jar jacoco-0.8.7/lib/jacococli.jar report build/jacoco/jacocoTest.exec --classfiles build/classes --csv t2.report')
                 }
             }
         }
