@@ -12,8 +12,8 @@ pipeline {
         stage('Run app into docker container') {
             steps {
                 script {
-                    sh('docker build -t url-shortener .')
-                    sh('docker run --name url-shortener --network="host" --detach url-shortener')
+//                    sh('docker build -t url-shortener .')
+//                    sh('docker run --name url-shortener --network="host" --detach url-shortener')
                 }
             }
         }
