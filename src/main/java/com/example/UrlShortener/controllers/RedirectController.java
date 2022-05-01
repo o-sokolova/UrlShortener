@@ -16,7 +16,6 @@ public class RedirectController {
     //"http://localhost:" + serverPort + "/"
     @RequestMapping("/{key}")
     public void redirect(@PathVariable("key") String key, HttpServletResponse response){
-
         String longUrl = urlShortenerService.findLongUrl(key);
         response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
         response.addHeader("Location", longUrl);
