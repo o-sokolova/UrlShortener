@@ -30,7 +30,6 @@ pipeline {
             steps {
                 script {
                 sh('docker cp url-shortener:build/jacoco/jacocoTest.exec ./')
-                THEJOB="${JOB_NAME.substring(JOB_NAME.lastIndexOf('/') + 1, JOB_NAME.length())}"
                 sh('java -jar jacoco-0.8.7/lib/jacococli.jar report jacocoTest.exec --classfiles build/classes --csv ${PWD##*/}.report')
                 }
             }
